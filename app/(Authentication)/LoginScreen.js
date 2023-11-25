@@ -6,10 +6,7 @@ const LoginScreen = () => {
   return (
     <View style={styles.container}>
       <Text>LoginScreen</Text>
-      <Button
-        title="Sign Up"
-        onPress={() => router.push("/Authentication/SignupScreen")}
-      />
+      <Button title="Sign Up" onPress={() => router.push("/SignupScreen")} />
     </View>
   );
 };

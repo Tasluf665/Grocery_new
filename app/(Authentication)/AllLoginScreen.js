@@ -2,19 +2,22 @@ import { Button, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { router } from "expo-router";
 
-const WelcomeScreen = () => {
+const AllLoginScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>WelcomeScreen</Text>
+      <Text>Image</Text>
+      <Text>Text</Text>
       <Button
-        title="Get Started"
-        onPress={() => router.push("/Authentication/AllLoginScreen")}
+        title="Number Input"
+        onPress={() => router.push("/PhoneLoginScreen")}
       />
+      <Button title="Email Login" onPress={() => router.push("/LoginScreen")} />
+      <Button title="Google Login" onPress={() => {}} />
     </View>
   );
 };
 
-export default WelcomeScreen;
+export default AllLoginScreen;
 
 const styles = StyleSheet.create({
   container: {

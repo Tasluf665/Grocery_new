@@ -23,7 +23,7 @@ const index = () => {
     return null;
   }
 
-  return <Redirect href="/Authentication" />;
+  return <Redirect href="/SplashScreen" />;
 };
 
 export default index;

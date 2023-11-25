@@ -1,20 +1,20 @@
-import { StyleSheet, Text, View, Button } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { router } from "expo-router";
 
-const PhoneLoginScreen = () => {
+const WelcomeScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>PhoneLoginScreen</Text>
+      <Text>WelcomeScreen</Text>
       <Button
-        title="Enter Code"
-        onPress={() => router.push("/Authentication/PhoneCodeScreen")}
+        title="Get Started"
+        onPress={() => router.push("/AllLoginScreen")}
       />
     </View>
   );
 };
 
-export default PhoneLoginScreen;
+export default WelcomeScreen;
 
 const styles = StyleSheet.create({
   container: {
