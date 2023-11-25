@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { useFonts } from "expo-font";
-import customeFonts from "../constant/customeFonts";
+import { Redirect } from "expo-router";
 
 const index = () => {
   const [fontsLoaded] = useFonts({
@@ -22,13 +22,8 @@ const index = () => {
   if (!fontsLoaded) {
     return null;
   }
-  return (
-    <View>
-      <Text style={{ fontFamily: customeFonts.Gilroy_ExtraBold }}>
-        Gilroy_ExtraBold
-      </Text>
-    </View>
-  );
+
+  return <Redirect href="/Authentication" />;
 };
 
 export default index;
