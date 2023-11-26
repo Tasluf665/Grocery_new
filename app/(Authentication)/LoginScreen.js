@@ -19,7 +19,9 @@ const LoginScreen = () => {
         email,
         password
       );
-      console.log(userCredential.user);
+      if (userCredential.user) {
+        router.replace("/Main");
+      }
     } catch (error) {
       console.log(error.message);
     }

@@ -1,7 +1,10 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { useFonts } from "expo-font";
-import { Redirect } from "expo-router";
+import { Redirect, Slot } from "expo-router";
+import { Provider } from "react-redux";
+import { store } from "../redux/store";
+import AppContainer from "./AppContainer";
 
 const index = () => {
   const [fontsLoaded] = useFonts({
@@ -23,7 +26,14 @@ const index = () => {
     return null;
   }
 
-  return <Redirect href="/SplashScreen" />;
+  let isAuth = false;
+  let screenName = isAuth ? "/Main" : "/Authentication";
+
+  return (
+    <Provider store={store}>
+      <Redirect href={screenName} />
+    </Provider>
+  );
 };
 
 export default index;

@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 import React from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
+import { router } from "expo-router";
 
 const SignupScreen = () => {
   const [password, setPassword] = React.useState();
@@ -15,7 +16,10 @@ const SignupScreen = () => {
         email,
         password
       );
-      console.log(userCredential.user);
+
+      if (userCredential.user) {
+        router.replace("/Main");
+      }
     } catch (error) {
       console.log(error.message);
     }
