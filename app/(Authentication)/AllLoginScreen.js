@@ -1,6 +1,7 @@
 import { Button, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { router } from "expo-router";
+import Auth from "../../components/Auth";
 
 const AllLoginScreen = () => {
   return (
@@ -12,7 +13,7 @@ const AllLoginScreen = () => {
         onPress={() => router.push("/PhoneLoginScreen")}
       />
       <Button title="Email Login" onPress={() => router.push("/LoginScreen")} />
-      <Button title="Google Login" onPress={() => {}} />
+      <Auth />
     </View>
   );
 };
