@@ -4,7 +4,10 @@ export const authSlice = createSlice({
   initialState: 0,
   name: "auth",
   reducers: {
-    loging: (state) => console.log("Auth reducer working"),
+    loging: (state) => {
+      console.log("Auth reducer working");
+      return state;
+    },
   },
 });
 

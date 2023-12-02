@@ -2,15 +2,16 @@
 //https://blog.logrocket.com/integrating-firebase-authentication-expo-mobile-app/
 //https://www.youtube.com/watch?v=ql4J6SpLXZA&t=1188s
 
-import { StyleSheet, Text, View, Button, TextInput } from "react-native";
+import { StyleSheet, Text, View, Button, TextInput, Alert } from "react-native";
 import React from "react";
-import { router } from "expo-router";
+import { router, useNavigation } from "expo-router";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 
 const LoginScreen = () => {
   const [password, setPassword] = React.useState();
   const [email, setEmail] = React.useState();
+  const navigation = useNavigation();
 
   const handleSigin = async () => {
     try {
@@ -20,10 +21,10 @@ const LoginScreen = () => {
         password
       );
       if (userCredential.user) {
-        router.replace("/Main");
+        navigation.replace("Main");
       }
     } catch (error) {
-      console.log(error.message);
+      Alert.alert(error.message);
     }
   };
   return (

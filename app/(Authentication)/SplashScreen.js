@@ -1,15 +1,21 @@
 import { StyleSheet, Text, View } from "react-native";
 import React, { useEffect } from "react";
 import { useNavigation } from "expo-router";
+import { auth } from "../../firebase";
 
 const SplashScreen = () => {
   const navigation = useNavigation();
+
   useEffect(() => {
-    const timer = setTimeout(() => {
-      navigation.replace("WelcomeScreen");
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, [navigation]);
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        navigation.replace("Main");
+      } else {
+        navigation.replace("WelcomeScreen");
+      }
+      return () => unsubscribe();
+    });
+  }, []);
 
   return (
     <View style={styles.container}>
