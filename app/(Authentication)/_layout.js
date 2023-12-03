@@ -2,7 +2,10 @@ import { Stack } from "expo-router";
 
 export default () => {
   return (
-    <Stack initialRouteName="SplashScreen">
+    <Stack
+      initialRouteName="SplashScreen"
+      screenOptions={{ headerShown: false }}
+    >
       <Stack.Screen name="SplashScreen" />
       <Stack.Screen name="WelcomeScreen" />
       <Stack.Screen name="AllLoginScreen" />
